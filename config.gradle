@@ -1,5 +1,5 @@
 ext{
-    isRelease=false
+    isRelease=true
 
     // 正式环境 和 测试环境 服务器 URL 配置
     url = [
@@ -21,10 +21,12 @@ ext{
     ]
 
     appID=[
-            app: "com.meishe.msvideocut"
+            app: "com.meishe.msvideocut",
+            videoEdit: "com.meishe.modulevideoedit",
+            capture:"com.meishe.capture"
     ]
 
-    dependenciesID=[
+    dependenciesBase=[
             "appcompat"       : "androidx.appcompat:appcompat:1.2.0",
             "constraintlayout": "androidx.constraintlayout:constraintlayout:2.0.1",
             "material"        : "com.google.android.material:material:1.1.0",

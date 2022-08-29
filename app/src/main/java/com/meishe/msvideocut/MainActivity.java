@@ -2,36 +2,44 @@ package com.meishe.msvideocut;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
 
+import com.meishe.libbase.BaseActivity;
+import com.meishe.modulecapture.CaptureActivity;
+import com.meishe.modulevideoedit.VideoEditActivity;
 import com.meishe.msvideocut.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
-    // Used to load the 'msvideocut' library on application startup.
     static {
         System.loadLibrary("msvideocut");
     }
 
-    private ActivityMainBinding binding;
+    private ActivityMainBinding mBinding;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View bindLayout() {
+        mBinding = ActivityMainBinding.inflate(getLayoutInflater());
+        return mBinding.getRoot();
+    }
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+    public void initListener() {
+        mBinding.btnCapture.setOnClickListener(this);
+        mBinding.btnVideoEdit.setOnClickListener(this);
+    }
 
-        // Example of a call to a native method
-        TextView tv = binding.sampleText;
-        tv.setText(stringFromJNI());
-
-
-//        BuildConfig.DEBUG
-//        BuildConfig.isRelease
-
-
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btn_capture:
+                 startActivity(new Intent(mContext, CaptureActivity.class));
+                break;
+            case  R.id.btn_video_edit:
+                startActivity(new Intent(mContext, VideoEditActivity.class));
+                break;
+        }
     }
 
     /**
@@ -39,4 +47,6 @@ public class MainActivity extends AppCompatActivity {
      * which is packaged with this application.
      */
     public native String stringFromJNI();
+
+
 }
