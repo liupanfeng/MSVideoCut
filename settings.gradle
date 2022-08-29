@@ -1,0 +1,3 @@
+println("lpf ---> settting build.gradle")
+rootProject.name = "MSVideoCut"
+include ':app'
