@@ -1,6 +1,8 @@
 ext{
     isRelease=true
 
+    packageNameForAPT = "com.meishe.new_modular_customarouter";
+
     // 正式环境 和 测试环境 服务器 URL 配置
     url = [
             "debug"  : "https://192.188.22.99/debug",
@@ -26,6 +28,7 @@ ext{
             capture:"com.meishe.capture"
     ]
 
+    //基础依赖循环加载
     dependenciesBase=[
             "appcompat"       : "androidx.appcompat:appcompat:1.2.0",
             "constraintlayout": "androidx.constraintlayout:constraintlayout:2.0.1",
