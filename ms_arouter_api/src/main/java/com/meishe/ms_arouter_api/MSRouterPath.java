@@ -1,7 +1,8 @@
 package com.meishe.ms_arouter_api;
 
 
-import com.meishe.ms_arouter_annotatio.bean.RouterBean;
+
+import com.meishe.ms_arouter_annotation.bean.RouterBean;
 
 import java.util.Map;
 
