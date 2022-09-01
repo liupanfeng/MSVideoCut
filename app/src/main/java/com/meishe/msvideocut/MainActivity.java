@@ -9,8 +9,10 @@ import android.view.View;
 import com.meishe.libbase.BaseActivity;
 import com.meishe.modulecapture.CaptureActivity;
 import com.meishe.modulevideoedit.VideoEditActivity;
+import com.meishe.ms_arouter_annotation.MSRouter;
 import com.meishe.msvideocut.databinding.ActivityMainBinding;
 
+@MSRouter(path="/app/MainActivity")
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     static {

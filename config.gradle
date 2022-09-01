@@ -1,7 +1,7 @@
 ext{
     isRelease=true
 
-    packageNameForAPT = "com.meishe.new_modular_customarouter";
+    packageNameForAPT = "com.meishe.msvideocut";
 
     // 正式环境 和 测试环境 服务器 URL 配置
     url = [

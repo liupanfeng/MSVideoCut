@@ -20,6 +20,16 @@ android {
         versionName androidID.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                // project.getName() == order
+                // this.project.getName() == order
+                // this.getProject().getName() == order
+                arguments = [moduleName: project.getName(), packageNameForAPT: packageNameForAPT]
+            }
+        }
+
     }
 
     buildTypes {
