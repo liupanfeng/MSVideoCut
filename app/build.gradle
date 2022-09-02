@@ -16,10 +16,13 @@ android {
         versionName androidID.versionName
 
         testInstrumentationRunner androidID.testInstrumentationRunner
-        externalNativeBuild {
-            cmake {
-                cppFlags ''
-            }
+//        externalNativeBuild {
+//
+//            abiFilters 'armeabi-v7a'
+//        }
+
+        ndk{
+            abiFilters 'armeabi-v7a'
         }
 
         //将build.gradle中的配置 让java层使用
@@ -81,6 +84,7 @@ dependencies {
 
     //  arouter 专用 注解模块
     implementation project(":ms_arouter_annotation")
+    implementation files('libs/NvAndroidStreamingSdk.jar')
 
 
     // arouter 专用 注解处理器

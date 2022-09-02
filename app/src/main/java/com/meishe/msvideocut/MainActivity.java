@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.meicam.sdk.NvsStreamingContext;
 import com.meishe.libbase.BaseActivity;
 import com.meishe.modulecapture.CaptureActivity;
 import com.meishe.modulevideoedit.VideoEditActivity;
@@ -30,6 +31,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void initListener() {
         mBinding.btnCapture.setOnClickListener(this);
         mBinding.btnVideoEdit.setOnClickListener(this);
+
+
     }
 
     @Override
